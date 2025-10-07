@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Pliki źródłowe">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Pliki zasobów">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\utils">
+      <UniqueIdentifier>{a030c167-80b5-4f82-839b-ec30d364424b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\model">
+      <UniqueIdentifier>{5d724396-e116-4e22-9b13-f3eb3337fbe7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\services">
+      <UniqueIdentifier>{d8fb4c7f-d4dc-4b77-b102-0affa167c5f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\patterns">
+      <UniqueIdentifier>{388ae571-70fb-4f66-a8e9-731a9cf6ac6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\utils">
+      <UniqueIdentifier>{9653837d-a035-4e4a-ad10-f8daa7758506}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\model">
+      <UniqueIdentifier>{71b7f293-3921-41bf-9a9a-46eb9b41870b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\services">
+      <UniqueIdentifier>{f2303fc8-5241-4ac5-9d09-079455c86457}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\patterns">
+      <UniqueIdentifier>{c80f7315-54b4-48ea-a0a9-c4edaf7c3654}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\patterns\strategies">
+      <UniqueIdentifier>{45ebec76-7f13-4b85-a02b-4ad47034f2d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\patterns\strategies">
+      <UniqueIdentifier>{3001d50b-bbb0-44c6-8d5b-2f21d573ab16}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CurrencyExchanger.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Currency.cpp">
+      <Filter>Pliki źródłowe\model</Filter>
+    </ClCompile>
+    <ClCompile Include="Money.cpp">
+      <Filter>Pliki źródłowe\model</Filter>
+    </ClCompile>
+    <ClCompile Include="HTTPClient.cpp">
+      <Filter>Pliki źródłowe\services</Filter>
+    </ClCompile>
+    <ClCompile Include="XMLParser.cpp">
+      <Filter>Pliki źródłowe\services</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectConversionStrategy.cpp">
+      <Filter>Pliki źródłowe\patterns\strategies</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectConversionStrategy.hpp">
+      <Filter>Pliki nagłówkowe\patterns\strategies</Filter>
+    </ClCompile>
+    <ClCompile Include="ThroughPLNConversionStrategy.cpp">
+      <Filter>Pliki źródłowe\patterns\strategies</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="CurrencyExchanger.rc">
+      <Filter>Pliki zasobów</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Types.hpp">
+      <Filter>Pliki nagłówkowe\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Exceptions.hpp">
+      <Filter>Pliki nagłówkowe\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Currency.hpp">
+      <Filter>Pliki nagłówkowe\model</Filter>
+    </ClInclude>
+    <ClInclude Include="XMLParser.hpp">
+      <Filter>Pliki nagłówkowe\services</Filter>
+    </ClInclude>
+    <ClInclude Include="NBPService.hpp">
+      <Filter>Pliki nagłówkowe\services</Filter>
+    </ClInclude>
+    <ClInclude Include="Money.hpp">
+      <Filter>Pliki nagłówkowe\model</Filter>
+    </ClInclude>
+    <ClInclude Include="HTTPCllient.hpp">
+      <Filter>Pliki nagłówkowe\services</Filter>
+    </ClInclude>
+    <ClInclude Include="IIterator.hpp">
+      <Filter>Pliki nagłówkowe\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="CurrencyIterator.hpp">
+      <Filter>Pliki nagłówkowe\patterns</Filter>
+    </ClInclude>
+    <ClInclude Include="IConversionStrategy.hpp">
+      <Filter>Pliki nagłówkowe\patterns\strategies</Filter>
+    </ClInclude>
+    <ClInclude Include="ThroughPLNConversionStrategy.hpp">
+      <Filter>Pliki nagłówkowe\patterns\strategies</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
