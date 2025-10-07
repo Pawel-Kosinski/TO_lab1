@@ -133,11 +133,10 @@
     <ClCompile Include="DirectConversionStrategy.hpp" />
     <ClCompile Include="HTTPClient.cpp" />
     <ClCompile Include="Money.cpp" />
+    <ClCompile Include="Subject.cpp" />
     <ClCompile Include="ThroughPLNConversionStrategy.cpp" />
+    <ClCompile Include="UIObserver.cpp" />
     <ClCompile Include="XMLParser.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="CurrencyExchanger.rc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Currency.hpp" />
@@ -146,10 +145,13 @@
     <ClInclude Include="HTTPCllient.hpp" />
     <ClInclude Include="IConversionStrategy.hpp" />
     <ClInclude Include="IIterator.hpp" />
+    <ClInclude Include="IObserver.hpp" />
     <ClInclude Include="Money.hpp" />
     <ClInclude Include="NBPService.hpp" />
+    <ClInclude Include="Subject.hpp" />
     <ClInclude Include="ThroughPLNConversionStrategy.hpp" />
     <ClInclude Include="Types.hpp" />
+    <ClInclude Include="UIObserver.hpp" />
     <ClInclude Include="XMLParser.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

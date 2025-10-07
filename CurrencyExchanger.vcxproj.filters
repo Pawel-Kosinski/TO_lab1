@@ -43,6 +43,12 @@
     <Filter Include="Pliki nagłówkowe\patterns\strategies">
       <UniqueIdentifier>{3001d50b-bbb0-44c6-8d5b-2f21d573ab16}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki nagłówkowe\patterns\observer">
+      <UniqueIdentifier>{f5fe787c-9848-48aa-a205-762cc8b039ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\patterns\observer">
+      <UniqueIdentifier>{5fea530c-2dce-4ad4-a828-d2b45b13845f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CurrencyExchanger.cpp">
@@ -69,11 +75,12 @@
     <ClCompile Include="ThroughPLNConversionStrategy.cpp">
       <Filter>Pliki źródłowe\patterns\strategies</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="CurrencyExchanger.rc">
-      <Filter>Pliki zasobów</Filter>
-    </ResourceCompile>
+    <ClCompile Include="Subject.cpp">
+      <Filter>Pliki źródłowe\patterns\observer</Filter>
+    </ClCompile>
+    <ClCompile Include="UIObserver.cpp">
+      <Filter>Pliki źródłowe\patterns\observer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Types.hpp">
@@ -108,6 +115,15 @@
     </ClInclude>
     <ClInclude Include="ThroughPLNConversionStrategy.hpp">
       <Filter>Pliki nagłówkowe\patterns\strategies</Filter>
+    </ClInclude>
+    <ClInclude Include="IObserver.hpp">
+      <Filter>Pliki nagłówkowe\patterns\observer</Filter>
+    </ClInclude>
+    <ClInclude Include="Subject.hpp">
+      <Filter>Pliki nagłówkowe\patterns\observer</Filter>
+    </ClInclude>
+    <ClInclude Include="UIObserver.hpp">
+      <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
