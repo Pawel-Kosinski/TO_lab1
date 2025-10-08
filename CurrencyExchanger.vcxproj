@@ -70,12 +70,16 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <IncludePath>$(ProjectDir)include;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -90,6 +94,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -104,6 +109,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -118,6 +124,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,32 +134,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Currency.cpp" />
     <ClCompile Include="CurrencyExchanger.cpp" />
-    <ClCompile Include="DirectConversionStrategy.cpp" />
-    <ClCompile Include="DirectConversionStrategy.hpp" />
-    <ClCompile Include="HTTPClient.cpp" />
-    <ClCompile Include="Money.cpp" />
-    <ClCompile Include="Subject.cpp" />
-    <ClCompile Include="ThroughPLNConversionStrategy.cpp" />
-    <ClCompile Include="UIObserver.cpp" />
-    <ClCompile Include="XMLParser.cpp" />
+    <ClCompile Include="src\model\Currency.cpp" />
+    <ClCompile Include="src\model\Money.cpp" />
+    <ClCompile Include="src\services\HTTPClient.cpp" />
+    <ClCompile Include="src\services\XMLParser.cpp" />
+    <ClCompile Include="src\patterns\strategies\DirectConversionStrategy.cpp" />
+    <ClCompile Include="src\patterns\strategies\ThroughPLNConversionStrategy.cpp" />
+    <ClCompile Include="src\patterns\observer\Subject.cpp" />
+    <ClCompile Include="src\patterns\observer\UIObserver.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Currency.hpp" />
-    <ClInclude Include="CurrencyIterator.hpp" />
-    <ClInclude Include="Exceptions.hpp" />
-    <ClInclude Include="HTTPCllient.hpp" />
-    <ClInclude Include="IConversionStrategy.hpp" />
-    <ClInclude Include="IIterator.hpp" />
-    <ClInclude Include="IObserver.hpp" />
-    <ClInclude Include="Money.hpp" />
-    <ClInclude Include="NBPService.hpp" />
-    <ClInclude Include="Subject.hpp" />
-    <ClInclude Include="ThroughPLNConversionStrategy.hpp" />
-    <ClInclude Include="Types.hpp" />
-    <ClInclude Include="UIObserver.hpp" />
-    <ClInclude Include="XMLParser.hpp" />
+    <ClInclude Include="include\utils\Types.hpp" />
+    <ClInclude Include="include\utils\Exceptions.hpp" />
+    <ClInclude Include="include\model\Currency.hpp" />
+    <ClInclude Include="include\model\Money.hpp" />
+    <ClInclude Include="include\services\HTTPCllient.hpp" />
+    <ClInclude Include="include\services\XMLParser.hpp" />
+    <ClInclude Include="include\services\NBPService.hpp" />
+    <ClInclude Include="include\patterns\iterator\IIterator.hpp" />
+    <ClInclude Include="include\patterns\iterator\CurrencyIterator.hpp" />
+    <ClInclude Include="include\patterns\strategies\IConversionStrategy.hpp" />
+    <ClInclude Include="include\patterns\strategies\DirectConversionStrategy.hpp" />
+    <ClInclude Include="include\patterns\strategies\ThroughPLNConversionStrategy.hpp" />
+    <ClInclude Include="include\patterns\observer\IObserver.hpp" />
+    <ClInclude Include="include\patterns\observer\Subject.hpp" />
+    <ClInclude Include="include\patterns\observer\UIObserver.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
