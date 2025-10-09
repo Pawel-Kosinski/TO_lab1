@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Currency.hpp"
-#include "types.hpp"
+#include "model/Currency.hpp"
+#include "utils/Types.hpp"
 
 namespace CurrencyApp {
 

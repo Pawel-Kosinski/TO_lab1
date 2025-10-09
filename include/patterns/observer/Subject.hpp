@@ -1,7 +1,7 @@
 #pragma once
 
 #include "IObserver.hpp"
-#include "Types.hpp"
+#include "utils/Types.hpp"
 
 namespace CurrencyApp {
 

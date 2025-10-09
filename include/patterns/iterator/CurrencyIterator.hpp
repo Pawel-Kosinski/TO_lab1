@@ -1,14 +1,22 @@
-#include "IIterator.hpp"
+#pragma once
 
-class CurrencyIterator : public IIterator<SharedPtr<Currency>> {
-private:
-    vector<SharedPtr<Currency>> currencies;
-    size_t position;
+#include "IIterator.h"
+#include "model/Currency.h"
+#include "utils/Types.h"
 
-public:
-    explicit CurrencyIterator(const vector<SharedPtr<Currency>>& currs);
+namespace CurrencyApp {
 
-    bool hasNext() const override;
-    SharedPtr<Currency> next() override;
-    void reset() override;
-};
+    class CurrencyIterator : public IIterator<SharedPtr<Currency>> {
+    private:
+        List<SharedPtr<Currency>> currencies;
+        size_t position;
+
+    public:
+        explicit CurrencyIterator(const List<SharedPtr<Currency>>& currs);
+
+        bool hasNext() const override;
+        SharedPtr<Currency> next() override;
+        void reset() override;
+    };
+
+} // namespace CurrencyApp

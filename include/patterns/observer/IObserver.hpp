@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Money.hpp"
+#include "model/Money.hpp"
 
 namespace CurrencyApp {
 
