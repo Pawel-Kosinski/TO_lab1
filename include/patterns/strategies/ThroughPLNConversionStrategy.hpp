@@ -1,7 +1,7 @@
 #pragma once
 
 #include "IConversionStrategy.hpp"
-#include "NBPService.hpp"
+#include "services/NBPService.hpp"
 
 namespace CurrencyApp {
 

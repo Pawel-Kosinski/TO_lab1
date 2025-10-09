@@ -15,7 +15,7 @@ public:
     CurrencyConverter();
     ~CurrencyConverter() = default;
 
-    Money convert(const Money& from, SharedPtr<Currency> to);
+    Money convert(const Money& from, shared_ptr<Currency> to);
     void setStrategy(unique_ptr<IConversionStrategy> newStrategy);
 };
 

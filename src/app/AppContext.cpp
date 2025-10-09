@@ -1,8 +1,8 @@
-#include "app/AppContext.h"
-#include "patterns/states/InitialState.h"
-#include "patterns/observer/UIObserver.h"
-#include "services/NBPService.h"
-#include "utils/Exceptions.h"
+#include "app/AppContext.hpp"
+#include "patterns/states/InitialState.hpp"
+#include "patterns/observer/UIObserver.hpp"
+#include "services/NBPService.hpp"
+#include "utils/Exceptions.hpp"
 
 namespace CurrencyApp {
 
@@ -29,15 +29,15 @@ void AppContext::initialize() {
     }
 }
 
-Money AppContext::convertCurrency(double amount, const String& fromCode, const String& toCode) {
+Money AppContext::convertCurrency(double amount, const string& fromCode, const string& toCode) {
     NBPService& nbp = NBPService::getInstance();
 
-    SharedPtr<Currency> fromCurrency = nbp.getRate(toUpperCase(fromCode));
+    shared_ptr<Currency> fromCurrency = nbp.getRate(toUpperCase(fromCode));
     if (fromCurrency == nullptr) {
         throw ValidationException("Currency not found", fromCode);
     }
 
-    SharedPtr<Currency> toCurrency = nbp.getRate(toUpperCase(toCode));
+    shared_ptr<Currency> toCurrency = nbp.getRate(toUpperCase(toCode));
     if (toCurrency == nullptr) {
         throw ValidationException("Currency not found", toCode);
     }

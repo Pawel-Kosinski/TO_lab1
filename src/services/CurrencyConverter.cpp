@@ -10,7 +10,7 @@ CurrencyConverter::CurrencyConverter() {
     strategy = std::make_unique<ThroughPLNConversionStrategy>(nbp);
 }
 
-Money CurrencyConverter::convert(const Money& from, SharedPtr<Currency> to) {
+Money CurrencyConverter::convert(const Money& from, shared_ptr<Currency> to) {
     if (strategy == nullptr) {
         throw StateException("Conversion strategy is not set");
     }
@@ -22,7 +22,7 @@ Money CurrencyConverter::convert(const Money& from, SharedPtr<Currency> to) {
     return result;
 }
 
-void CurrencyConverter::setStrategy(UniquePtr<IConversionStrategy> newStrategy) {
+void CurrencyConverter::setStrategy(unique_ptr<IConversionStrategy> newStrategy) {
     if (newStrategy == nullptr) {
         throw ValidationException("Strategy cannot be null");
     }

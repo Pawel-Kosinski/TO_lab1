@@ -1,7 +1,6 @@
 #pragma once
 
 #include "utils/Types.hpp"
-#include "app/AppContext.hpp"
 
 namespace CurrencyApp {
 

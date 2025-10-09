@@ -1,5 +1,4 @@
-#include "UIObserver.hpp"
-#include <iostream>
+#include "patterns/observer/UIObserver.hpp"
 
 namespace CurrencyApp {
 

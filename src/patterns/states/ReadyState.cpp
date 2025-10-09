@@ -1,4 +1,5 @@
 #include "patterns/states/ReadyState.hpp"
+#include "app/AppContext.hpp"
 
 namespace CurrencyApp {
 

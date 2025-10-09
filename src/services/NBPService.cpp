@@ -3,7 +3,7 @@
 
 namespace CurrencyApp {
 
-    const string NBPService::NBP_URL = "https://www.nbp.pl/kursy/xml/lasta.xml";
+    const string NBPService::NBP_URL = "https://static.nbp.pl/dane/kursy/xml/LastA.xml";
 
     NBPService::NBPService()
         : httpClient(HTTPClient::getInstance()),

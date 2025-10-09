@@ -9,19 +9,14 @@
 #include <iomanip>
 #include <iostream>
 
-using namespace std;
-
 namespace CurrencyApp {
-
-//using String = std::string;
-//template<typename T>
-//using List = std::vector<T>;
-template<typename K, typename V>
-using Map = std::map<K, V>;
-//template<typename T>
-//using SharedPtr = std::shared_ptr<T>;
-//template<typename T>
-//using UniquePtr = std::unique_ptr<T>;
+    using std::string;
+    using std::shared_ptr;
+    using std::unique_ptr;
+    using std::vector;
+    using std::cout;
+    using std::endl;
+    using std::map;
 
 inline string doubleToString(double value, int precision = 2) {
     std::ostringstream out;

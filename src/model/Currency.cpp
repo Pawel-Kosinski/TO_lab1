@@ -1,57 +1,57 @@
-#include "Currency.hpp"
-#include "Exceptions.hpp"
+#include "model/Currency.hpp"
+#include "utils/Exceptions.hpp"
 
 namespace CurrencyApp {
 
-    Currency::Currency(const string& code, const string& name, double rate, int multiplier)
-        : code(code), name(name), rate(rate), multiplier(multiplier) {
+Currency::Currency(const string& code, const string& name, double rate, int multiplier)
+    : code(code), name(name), rate(rate), multiplier(multiplier) {
 
-        if (code.empty()) {
-            throw ValidationException("Currency code cannot be empty");
-        }
-
-        if (rate < 0) {
-            throw ValidationException("Currency rate cannot be negative", doubleToString(rate));
-        }
-
-        if (multiplier <= 0) {
-            throw ValidationException("Currency multiplier must be positive", std::to_string(multiplier));
-        }
+    if (code.empty()) {
+        throw ValidationException("Currency code cannot be empty");
     }
 
-    const string& Currency::getCode() const {
-        return code;
+    if (rate < 0) {
+        throw ValidationException("Currency rate cannot be negative", doubleToString(rate));
     }
 
-    const string& Currency::getName() const {
-        return name;
+    if (multiplier <= 0) {
+        throw ValidationException("Currency multiplier must be positive", std::to_string(multiplier));
     }
+}
 
-    double Currency::getRate() const {
-        return rate;
-    }
+const string& Currency::getCode() const {
+    return code;
+}
 
-    int Currency::getMultiplier() const {
-        return multiplier;
-    }
+const string& Currency::getName() const {
+    return name;
+}
 
-    void Currency::setRate(double rate) {
-        if (rate < 0) {
-            throw ValidationException("Currency rate cannot be negative", doubleToString(rate));
-        }
-        this->rate = rate;
-    }
+double Currency::getRate() const {
+    return rate;
+}
 
-    void Currency::setMultiplier(int multiplier) {
-        if (multiplier <= 0) {
-            throw ValidationException("Currency multiplier must be positive", std::to_string(multiplier));
-        }
-        this->multiplier = multiplier;
-    }
+int Currency::getMultiplier() const {
+    return multiplier;
+}
 
-    string Currency::toString() const {
-        return code + " - " + name + " (Rate: " + doubleToString(rate, 4) +
-            " PLN, Multiplier: " + std::to_string(multiplier) + ")";
+void Currency::setRate(double rate) {
+    if (rate < 0) {
+        throw ValidationException("Currency rate cannot be negative", doubleToString(rate));
     }
+    this->rate = rate;
+}
+
+void Currency::setMultiplier(int multiplier) {
+    if (multiplier <= 0) {
+        throw ValidationException("Currency multiplier must be positive", std::to_string(multiplier));
+    }
+    this->multiplier = multiplier;
+}
+
+string Currency::toString() const {
+    return code + " - " + name + " (Rate: " + doubleToString(rate, 4) +
+        " PLN, Multiplier: " + std::to_string(multiplier) + ")";
+}
 
 } // namespace CurrencyApp

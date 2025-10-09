@@ -4,7 +4,7 @@
 #include "model/Currency.hpp"
 #include "patterns/iterator/CurrencyIterator.hpp"
 #include "utils/Types.hpp"
-#include "HTTPCllient.hpp"
+#include "HTTPClient.hpp"
 
 namespace CurrencyApp {
 
@@ -17,7 +17,7 @@ namespace CurrencyApp {
 
         HTTPClient& httpClient;
         unique_ptr<XMLParser> xmlParser;
-        Map<string, shared_ptr<Currency>> exchangeRates;
+        map<string, shared_ptr<Currency>> exchangeRates;
         string lastUpdate;
 
         static const string NBP_URL;

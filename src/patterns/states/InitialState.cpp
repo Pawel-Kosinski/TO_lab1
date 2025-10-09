@@ -1,6 +1,6 @@
 #include "patterns/states/InitialState.hpp"
 #include "patterns/states/LoadingState.hpp"
-#include <iostream>
+#include "app/AppContext.hpp"
 
 namespace CurrencyApp {
 

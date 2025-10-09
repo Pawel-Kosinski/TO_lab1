@@ -1,5 +1,5 @@
 #pragma once
-#include "Types.hpp"
+#include "utils/Types.hpp"
 
 namespace CurrencyApp {
 

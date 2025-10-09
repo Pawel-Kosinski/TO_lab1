@@ -1,5 +1,5 @@
-#include "XMLParser.hpp"
-#include "Exceptions.hpp"
+#include "services/XMLParser.hpp"
+#include "utils/Exceptions.hpp"
 #include <sstream>
 
 namespace CurrencyApp {

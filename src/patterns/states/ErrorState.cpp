@@ -1,4 +1,5 @@
 #include "patterns/states/ErrorState.hpp"
+#include "app/AppContext.hpp"
 
 namespace CurrencyApp {
 

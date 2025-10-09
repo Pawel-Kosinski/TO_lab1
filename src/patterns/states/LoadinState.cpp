@@ -2,6 +2,8 @@
 #include "patterns/states/ReadyState.hpp"
 #include "patterns/states/ErrorState.hpp"
 #include "services/NBPService.hpp"
+#include "app/AppContext.hpp"
+#include <utils/Exceptions.hpp>
 
 namespace CurrencyApp {
 

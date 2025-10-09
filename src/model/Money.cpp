@@ -1,5 +1,5 @@
-#include "Money.hpp"
-#include "Exceptions.hpp"
+#include "model/Money.hpp"
+#include "utils/Exceptions.hpp"
 
 namespace CurrencyApp {
 

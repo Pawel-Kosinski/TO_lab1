@@ -1,7 +1,7 @@
 #pragma once
 
 #include "InputValidator.hpp"
-#include <services/CurrencyConventer.hpp>
+#include <services/CurrencyConverter.hpp>
 #include "patterns/states/IApplicationState.hpp"
 #include "utils/Types.hpp"
 

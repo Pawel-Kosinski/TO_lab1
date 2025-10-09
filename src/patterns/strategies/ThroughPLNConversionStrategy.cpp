@@ -1,5 +1,5 @@
-#include "ThroughPLNConversionStrategy.hpp"
-#include "Exceptions.hpp"
+#include "patterns/strategies/ThroughPLNConversionStrategy.hpp"
+#include "utils/Exceptions.hpp"
 
 namespace CurrencyApp {
 

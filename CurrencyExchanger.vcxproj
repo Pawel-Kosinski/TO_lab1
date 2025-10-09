@@ -135,9 +135,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CurrencyExchanger.cpp" />
+    <ClCompile Include="src\app\AppContext.cpp" />
+    <ClCompile Include="src\app\CurrencyExchangeApp.cpp" />
+    <ClCompile Include="src\app\InputValidator.cpp" />
     <ClCompile Include="src\model\Currency.cpp" />
     <ClCompile Include="src\model\Money.cpp" />
+    <ClCompile Include="src\patterns\iterator\CurrencyIterator.cpp" />
+    <ClCompile Include="src\patterns\states\ConvertingState.cpp" />
+    <ClCompile Include="src\patterns\states\ErrorState.cpp" />
+    <ClCompile Include="src\patterns\states\InitialState.cpp" />
+    <ClCompile Include="src\patterns\states\LoadinState.cpp" />
+    <ClCompile Include="src\patterns\states\ReadyState.cpp" />
+    <ClCompile Include="src\services\CurrencyConverter.cpp" />
     <ClCompile Include="src\services\HTTPClient.cpp" />
+    <ClCompile Include="src\services\NBPService.cpp" />
     <ClCompile Include="src\services\XMLParser.cpp" />
     <ClCompile Include="src\patterns\strategies\DirectConversionStrategy.cpp" />
     <ClCompile Include="src\patterns\strategies\ThroughPLNConversionStrategy.cpp" />
@@ -145,11 +156,21 @@
     <ClCompile Include="src\patterns\observer\UIObserver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\app\AppContext.hpp" />
+    <ClInclude Include="include\app\CurrencyExchangeApp.hpp" />
+    <ClInclude Include="include\app\InputValidator.hpp" />
+    <ClInclude Include="include\patterns\states\ConvertingState.hpp" />
+    <ClInclude Include="include\patterns\states\ErrorState.hpp" />
+    <ClInclude Include="include\patterns\states\IApplicationState.hpp" />
+    <ClInclude Include="include\patterns\states\InitialState.hpp" />
+    <ClInclude Include="include\patterns\states\LoadingState.hpp" />
+    <ClInclude Include="include\patterns\states\ReadyState.hpp" />
+    <ClInclude Include="include\services\CurrencyConverter.hpp" />
     <ClInclude Include="include\utils\Types.hpp" />
     <ClInclude Include="include\utils\Exceptions.hpp" />
     <ClInclude Include="include\model\Currency.hpp" />
     <ClInclude Include="include\model\Money.hpp" />
-    <ClInclude Include="include\services\HTTPCllient.hpp" />
+    <ClInclude Include="include\services\HTTPClient.hpp" />
     <ClInclude Include="include\services\XMLParser.hpp" />
     <ClInclude Include="include\services\NBPService.hpp" />
     <ClInclude Include="include\patterns\iterator\IIterator.hpp" />
@@ -160,6 +181,9 @@
     <ClInclude Include="include\patterns\observer\IObserver.hpp" />
     <ClInclude Include="include\patterns\observer\Subject.hpp" />
     <ClInclude Include="include\patterns\observer\UIObserver.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CMakeLists.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

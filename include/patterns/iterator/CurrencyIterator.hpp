@@ -1,22 +1,22 @@
 #pragma once
 
-#include "IIterator.h"
-#include "model/Currency.h"
-#include "utils/Types.h"
+#include "IIterator.hpp"
+#include "model/Currency.hpp"
+#include "utils/Types.hpp"
 
 namespace CurrencyApp {
 
-    class CurrencyIterator : public IIterator<SharedPtr<Currency>> {
-    private:
-        List<SharedPtr<Currency>> currencies;
-        size_t position;
+class CurrencyIterator : public IIterator<shared_ptr<Currency>> {
+private:
+    vector<shared_ptr<Currency>> currencies;
+    size_t position;
 
-    public:
-        explicit CurrencyIterator(const List<SharedPtr<Currency>>& currs);
+public:
+    explicit CurrencyIterator(const vector<shared_ptr<Currency>>& currs);
 
-        bool hasNext() const override;
-        SharedPtr<Currency> next() override;
-        void reset() override;
-    };
+    bool hasNext() const override;
+    shared_ptr<Currency> next() override;
+    void reset() override;
+};
 
 } // namespace CurrencyApp

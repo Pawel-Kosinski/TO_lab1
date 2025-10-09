@@ -1,12 +1,14 @@
-#include "Exceptions.hpp"
+#include "utils/Exceptions.hpp"
 #include <cstdlib>
 #include <fstream>
 #include <sstream>
-#include "HTTPCllient.hpp"
+#include "services/HTTPClient.hpp"
 
 namespace CurrencyApp {
 
     HTTPClient::HTTPClient() : timeout(30) {}
+
+    HTTPClient::~HTTPClient() {}
 
     HTTPClient& HTTPClient::getInstance() {
         static HTTPClient instance;

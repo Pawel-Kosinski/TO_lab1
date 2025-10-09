@@ -1,4 +1,4 @@
-#include "Subject.hpp"
+#include "patterns/observer/Subject.hpp"
 #include <algorithm>
 
 namespace CurrencyApp {
