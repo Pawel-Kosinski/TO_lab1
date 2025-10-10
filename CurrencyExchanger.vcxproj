@@ -152,8 +152,6 @@
     <ClCompile Include="src\services\XMLParser.cpp" />
     <ClCompile Include="src\patterns\strategies\DirectConversionStrategy.cpp" />
     <ClCompile Include="src\patterns\strategies\ThroughPLNConversionStrategy.cpp" />
-    <ClCompile Include="src\patterns\observer\Subject.cpp" />
-    <ClCompile Include="src\patterns\observer\UIObserver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\app\AppContext.hpp" />
@@ -178,9 +176,6 @@
     <ClInclude Include="include\patterns\strategies\IConversionStrategy.hpp" />
     <ClInclude Include="include\patterns\strategies\DirectConversionStrategy.hpp" />
     <ClInclude Include="include\patterns\strategies\ThroughPLNConversionStrategy.hpp" />
-    <ClInclude Include="include\patterns\observer\IObserver.hpp" />
-    <ClInclude Include="include\patterns\observer\Subject.hpp" />
-    <ClInclude Include="include\patterns\observer\UIObserver.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CMakeLists.txt" />

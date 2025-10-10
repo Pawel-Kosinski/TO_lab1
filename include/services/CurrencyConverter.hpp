@@ -1,13 +1,12 @@
 #pragma once
 
-#include "patterns/observer/Subject.hpp"
 #include "patterns/strategies/IConversionStrategy.hpp"
 #include "model/Money.hpp"
 #include "utils/Types.hpp"
 
 namespace CurrencyApp {
 
-class CurrencyConverter : public Subject {
+class CurrencyConverter {
 private:
     unique_ptr<IConversionStrategy> strategy;
 

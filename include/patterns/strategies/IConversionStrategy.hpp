@@ -5,11 +5,11 @@
 
 namespace CurrencyApp {
 
-    class IConversionStrategy {
-    public:
-        virtual ~IConversionStrategy() = default;
+class IConversionStrategy {
+public:
+    virtual ~IConversionStrategy() = default;
 
-        virtual Money convert(const Money& from, shared_ptr<Currency> to) = 0;
-    };
+    virtual Money convert(const Money& from, shared_ptr<Currency> to) = 0;
+};
 
 } // namespace CurrencyApp

@@ -1,5 +1,6 @@
 #include "services/CurrencyConverter.hpp"
 #include "patterns/strategies/ThroughPLNConversionStrategy.hpp"
+#include "patterns/strategies/DirectConversionStrategy.hpp"
 #include "services/NBPService.hpp"
 #include "utils/Exceptions.hpp"
 
@@ -16,8 +17,6 @@ Money CurrencyConverter::convert(const Money& from, shared_ptr<Currency> to) {
     }
 
     Money result = strategy->convert(from, to);
-
-    notify(result);
 
     return result;
 }

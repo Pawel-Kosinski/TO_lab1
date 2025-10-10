@@ -8,30 +8,30 @@
 
 namespace CurrencyApp {
 
-    class NBPService {
-    private:
-        NBPService();
+class NBPService {
+private:
+    NBPService();
 
-        NBPService(const NBPService&) = delete;
-        NBPService& operator=(const NBPService&) = delete;
+    NBPService(const NBPService&) = delete;
+    NBPService& operator=(const NBPService&) = delete;
 
-        HTTPClient& httpClient;
-        unique_ptr<XMLParser> xmlParser;
-        map<string, shared_ptr<Currency>> exchangeRates;
-        string lastUpdate;
+    HTTPClient& httpClient;
+    unique_ptr<XMLParser> xmlParser;
+    map<string, shared_ptr<Currency>> exchangeRates;
+    string lastUpdate;
 
-        static const string NBP_URL;
+    static const string NBP_URL;
 
-    public:
-        ~NBPService() = default;
+public:
+    ~NBPService() = default;
 
-        static NBPService& getInstance();
+    static NBPService& getInstance();
 
-        void fetchExchangeRates();
-        shared_ptr<Currency> getRate(const string& code);
-        CurrencyIterator* getCurrencyIterator();
-        size_t getCurrencyCount() const;
-        const string& getLastUpdate() const;
-    };
+    void fetchExchangeRates();
+    shared_ptr<Currency> getRate(const string& code);
+    CurrencyIterator* getCurrencyIterator();
+    size_t getCurrencyCount() const;
+    const string& getLastUpdate() const;
+};
 
 } // namespace CurrencyApp

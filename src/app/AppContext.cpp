@@ -1,6 +1,5 @@
 #include "app/AppContext.hpp"
 #include "patterns/states/InitialState.hpp"
-#include "patterns/observer/UIObserver.hpp"
 #include "services/NBPService.hpp"
 #include "utils/Exceptions.hpp"
 
@@ -9,9 +8,6 @@ namespace CurrencyApp {
 AppContext::AppContext() : currentState(nullptr) {
     converter = std::make_unique<CurrencyConverter>();
     validator = std::make_unique<InputValidator>();
-
-    UIObserver* uiObserver = new UIObserver();
-    converter->attach(uiObserver);
 }
 
 AppContext::~AppContext() {

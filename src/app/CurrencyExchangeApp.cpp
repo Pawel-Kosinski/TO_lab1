@@ -1,9 +1,11 @@
 #include "app/CurrencyExchangeApp.hpp"
-#include "services/NBPService.hpp"
-#include "patterns/iterator/CurrencyIterator.hpp"
+
+#include "menuAction/HandleDisplayAvailableCurrencies.cpp"
+#include "menuAction/HandleExit.cpp"
 #include "utils/Exceptions.hpp"
 #include <iostream>
 #include <limits>
+
 
 namespace CurrencyApp {
 
@@ -24,7 +26,9 @@ void CurrencyExchangeApp::displayMenu() {
 }
 
 void CurrencyExchangeApp::displayAvailableCurrencies() {
-    NBPService& nbp = NBPService::getInstance();
+    auto handler = HandleDisplayAvailableCurrencies();
+    handler.handleAction();
+    /*NBPService& nbp = NBPService::getInstance();
 
     std::cout << "\n======================================" << std::endl;
     std::cout << "   DOSTEPNE WALUTY" << std::endl;
@@ -42,7 +46,7 @@ void CurrencyExchangeApp::displayAvailableCurrencies() {
 
     delete iterator;
 
-    std::cout << "======================================" << std::endl;
+    std::cout << "======================================" << std::endl;*/
 }
 
 void CurrencyExchangeApp::handleConversion() {
@@ -84,17 +88,22 @@ void CurrencyExchangeApp::handleConversion() {
 
         Money result = context->convertCurrency(amount, fromCode, toCode);
 
-        std::cout << "\nKonwersja: " << doubleToString(amount, 2) << " " << fromCode
+        std::cout << "\n==================================" << std::endl;
+        std::cout << "      WYNIK KONWERSJI" << std::endl;
+        std::cout << "==================================" << std::endl;
+        std::cout << "  " << doubleToString(amount, 2) << " " << fromCode
             << " = " << result.toString() << std::endl;
+        std::cout << "==================================" << std::endl;
 
     }
     catch (const CurrencyException& e) {
-        std::cerr << "Blad konwersji: " << e.what() << std::endl;
+        std::cerr << "\nBlad konwersji: " << e.what() << std::endl;
     }
 }
 
 void CurrencyExchangeApp::handleExit() {
-    std::cout << "\nDziekujemy za skorzystanie z kalkulatora walut!" << std::endl;
+    auto handler = HandleExit();
+    //std::cout << "\nDziekujemy za skorzystanie z kalkulatora walut!" << std::endl;
 }
 
 void CurrencyExchangeApp::run() {
