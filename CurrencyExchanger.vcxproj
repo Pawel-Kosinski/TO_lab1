@@ -135,9 +135,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CurrencyExchanger.cpp" />
+    <ClCompile Include="include\app\menuAction\ConversionAction.hpp" />
     <ClCompile Include="src\app\AppContext.cpp" />
     <ClCompile Include="src\app\CurrencyExchangeApp.cpp" />
     <ClCompile Include="src\app\InputValidator.cpp" />
+    <ClCompile Include="src\app\menuAction\ConversionAction.cpp" />
+    <ClCompile Include="src\app\menuAction\DisplayCurrenciesAction.cpp" />
+    <ClCompile Include="src\app\menuAction\ExitAction.cpp" />
     <ClCompile Include="src\model\Currency.cpp" />
     <ClCompile Include="src\model\Money.cpp" />
     <ClCompile Include="src\patterns\iterator\CurrencyIterator.cpp" />
@@ -157,6 +161,9 @@
     <ClInclude Include="include\app\AppContext.hpp" />
     <ClInclude Include="include\app\CurrencyExchangeApp.hpp" />
     <ClInclude Include="include\app\InputValidator.hpp" />
+    <ClInclude Include="include\app\menuAction\DisplayCurrenciesAction.hpp" />
+    <ClInclude Include="include\app\menuAction\ExitAction.hpp" />
+    <ClInclude Include="include\app\menuAction\IMenuAction.hpp" />
     <ClInclude Include="include\patterns\states\ConvertingState.hpp" />
     <ClInclude Include="include\patterns\states\ErrorState.hpp" />
     <ClInclude Include="include\patterns\states\IApplicationState.hpp" />

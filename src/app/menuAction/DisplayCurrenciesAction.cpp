@@ -1,10 +1,12 @@
-#include "app/menuAction/HandleDisplayAvailableCurrencies.hpp"
+#include "app/menuAction/DisplayCurrenciesAction.hpp"
+#include "services/NBPService.hpp"
+#include "patterns/iterator/CurrencyIterator.hpp"
 
 namespace CurrencyApp {
 
-HandleDisplayAvailableCurrencies::HandleDisplayAvailableCurrencies() = default;
+DisplayCurrenciesAction::DisplayCurrenciesAction() = default;
 
-void HandleDisplayAvailableCurrencies::handleAction() {
+void DisplayCurrenciesAction::execute() {
     NBPService& nbp = NBPService::getInstance();
 
     std::cout << "\n======================================" << std::endl;

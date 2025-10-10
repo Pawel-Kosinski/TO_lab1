@@ -1,16 +1,18 @@
 #include "app/CurrencyExchangeApp.hpp"
 
-#include "menuAction/HandleDisplayAvailableCurrencies.cpp"
-#include "menuAction/HandleExit.cpp"
-#include "utils/Exceptions.hpp"
-#include <iostream>
-#include <limits>
+#include "menuAction/DisplayCurrenciesAction.cpp"
+#include "menuAction/ExitAction.cpp"
+#include "menuAction/ConversionAction.cpp"
+#include "utils/Types.hpp"
+#include "app/AppContext.hpp"
 
 
 namespace CurrencyApp {
 
+using std::make_unique;
+
 CurrencyExchangeApp::CurrencyExchangeApp() {
-    context = std::make_unique<AppContext>();
+    context = make_unique<AppContext>();
 }
 
 void CurrencyExchangeApp::displayMenu() {
@@ -23,87 +25,6 @@ void CurrencyExchangeApp::displayMenu() {
     std::cout << "3. Wyjscie" << std::endl;
     std::cout << "======================================" << std::endl;
     std::cout << "Wybierz opcje: ";
-}
-
-void CurrencyExchangeApp::displayAvailableCurrencies() {
-    auto handler = HandleDisplayAvailableCurrencies();
-    handler.handleAction();
-    /*NBPService& nbp = NBPService::getInstance();
-
-    std::cout << "\n======================================" << std::endl;
-    std::cout << "   DOSTEPNE WALUTY" << std::endl;
-    std::cout << "======================================" << std::endl;
-
-    CurrencyIterator* iterator = nbp.getCurrencyIterator();
-
-    int index = 1;
-    while (iterator->hasNext()) {
-        shared_ptr<Currency> curr = iterator->next();
-        std::cout << index++ << ". " << curr->getCode() << " - "
-            << curr->getName() << " (Kurs: "
-            << doubleToString(curr->getRate(), 4) << " PLN)" << std::endl;
-    }
-
-    delete iterator;
-
-    std::cout << "======================================" << std::endl;*/
-}
-
-void CurrencyExchangeApp::handleConversion() {
-    InputValidator* validator = context->getValidator();
-
-    std::cout << "\n--- KONWERSJA WALUTY ---" << std::endl;
-
-    string amountStr;
-    std::cout << "Podaj kwote: ";
-    std::cin >> amountStr;
-
-    if (!validator->validateAmount(amountStr)) {
-        std::cerr << "Blad: Niepoprawna kwota!" << std::endl;
-        return;
-    }
-
-    string fromCode;
-    std::cout << "Waluta zrodlowa (np. USD): ";
-    std::cin >> fromCode;
-    fromCode = toUpperCase(trim(fromCode));
-
-    if (!validator->validateCurrency(fromCode)) {
-        std::cerr << "Blad: Niepoprawny kod waluty zrodlowej!" << std::endl;
-        return;
-    }
-
-    string toCode;
-    std::cout << "Waluta docelowa (np. EUR): ";
-    std::cin >> toCode;
-    toCode = toUpperCase(trim(toCode));
-
-    if (!validator->validateCurrency(toCode)) {
-        std::cerr << "Blad: Niepoprawny kod waluty docelowej!" << std::endl;
-        return;
-    }
-
-    try {
-        double amount = validator->parseAmount(amountStr);
-
-        Money result = context->convertCurrency(amount, fromCode, toCode);
-
-        std::cout << "\n==================================" << std::endl;
-        std::cout << "      WYNIK KONWERSJI" << std::endl;
-        std::cout << "==================================" << std::endl;
-        std::cout << "  " << doubleToString(amount, 2) << " " << fromCode
-            << " = " << result.toString() << std::endl;
-        std::cout << "==================================" << std::endl;
-
-    }
-    catch (const CurrencyException& e) {
-        std::cerr << "\nBlad konwersji: " << e.what() << std::endl;
-    }
-}
-
-void CurrencyExchangeApp::handleExit() {
-    auto handler = HandleExit();
-    //std::cout << "\nDziekujemy za skorzystanie z kalkulatora walut!" << std::endl;
 }
 
 void CurrencyExchangeApp::run() {
@@ -125,20 +46,28 @@ void CurrencyExchangeApp::run() {
                 continue;
             }
 
+            unique_ptr<IMenuAction> action;
+
             switch (choice) {
             case 1:
-                handleConversion();
+                action = make_unique<ConversionAction>(context.get());
                 break;
             case 2:
-                displayAvailableCurrencies();
+                action = make_unique<DisplayCurrenciesAction>();
                 break;
             case 3:
-                handleExit();
-                running = false;
+                action = make_unique<ExitAction>();
                 break;
             default:
                 std::cerr << "Blad: Niepoprawny wybor!" << std::endl;
-                break;
+                continue;
+            }
+
+            if (action) {
+                action->execute();
+                if (action->shouldExit()) {
+                    running = false;
+                }
             }
         }
 
