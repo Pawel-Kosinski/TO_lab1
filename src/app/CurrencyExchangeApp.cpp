@@ -1,11 +1,12 @@
 #include "app/CurrencyExchangeApp.hpp"
 
-#include "menuAction/DisplayCurrenciesAction.cpp"
-#include "menuAction/ExitAction.cpp"
-#include "menuAction/ConversionAction.cpp"
+#include "app/menuAction/DisplayCurrenciesAction.hpp"
+#include "app/menuAction/ExitAction.hpp"
+#include "app/menuAction/ConversionAction.hpp"
 #include "utils/Types.hpp"
 #include "app/AppContext.hpp"
-
+#include "utils/Exceptions.hpp"
+#include <limits>
 
 namespace CurrencyApp {
 
@@ -14,6 +15,8 @@ using std::make_unique;
 CurrencyExchangeApp::CurrencyExchangeApp() {
     context = make_unique<AppContext>();
 }
+
+CurrencyExchangeApp::~CurrencyExchangeApp() = default;
 
 void CurrencyExchangeApp::displayMenu() {
     std::cout << "\n" << std::endl;

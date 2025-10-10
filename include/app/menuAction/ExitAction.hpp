@@ -1,6 +1,6 @@
 #pragma once
 
-#include "IMenuAction.hpp"
+#include "app/menuAction/IMenuAction.hpp"
 
 namespace CurrencyApp {
 

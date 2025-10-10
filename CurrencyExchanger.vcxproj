@@ -135,7 +135,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CurrencyExchanger.cpp" />
-    <ClCompile Include="include\app\menuAction\ConversionAction.hpp" />
     <ClCompile Include="src\app\AppContext.cpp" />
     <ClCompile Include="src\app\CurrencyExchangeApp.cpp" />
     <ClCompile Include="src\app\InputValidator.cpp" />
@@ -161,6 +160,7 @@
     <ClInclude Include="include\app\AppContext.hpp" />
     <ClInclude Include="include\app\CurrencyExchangeApp.hpp" />
     <ClInclude Include="include\app\InputValidator.hpp" />
+    <ClInclude Include="include\app\menuAction\ConversionAction.hpp" />
     <ClInclude Include="include\app\menuAction\DisplayCurrenciesAction.hpp" />
     <ClInclude Include="include\app\menuAction\ExitAction.hpp" />
     <ClInclude Include="include\app\menuAction\IMenuAction.hpp" />

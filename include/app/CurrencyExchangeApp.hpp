@@ -1,5 +1,6 @@
 #pragma once
 #include "utils/Types.hpp"
+#include "app/menuAction/IMenuAction.hpp" 
 
 namespace CurrencyApp {
 
@@ -12,7 +13,7 @@ private:
 
 public:
     CurrencyExchangeApp();
-    ~CurrencyExchangeApp() = default;
+    ~CurrencyExchangeApp();
 
     void run();
 };
